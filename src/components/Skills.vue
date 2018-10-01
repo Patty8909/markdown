@@ -1,19 +1,24 @@
 <template>
-  <div class="container">
-    <h1>{{user.name}}</h1>
-    <a href="#" class="b-skill" v-for="(framework,index) in user.frameworks" :key="index">{{framework}}</a>
+  <div class="hello">
+    <div class="holder">
+      <ul>
+        <li v-for="(data, index) in skills" :key='index'>{{index}}. {{data.skill}}</li>
+      </ul>
+    </div>
+    <p v-if="skills.length >= 3">You have more than 2 skill</p>
+    <p v-else>You have less than or equal to 2 skill</p>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'Skills',
   data() {
     return {
-      user: {
-        name: 'Esmeralda',
-        frameworks: [ 'React', 'Angular', 'Vue.js', 'Metal.js'],
-      }
+      skills: [
+          { "skill": "Vue.js" },
+          { "skill": "Frontend Developer" }
+      ]
     }
   }
 }

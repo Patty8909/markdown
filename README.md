@@ -1,4 +1,4 @@
-# introd
+# hello-world
 
 ## Project setup
 ```
